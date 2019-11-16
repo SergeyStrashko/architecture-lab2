@@ -4,14 +4,16 @@ import (
 	"context"
 	"fmt"
 	"net/http"
+
+	"github.com/SergeyStrashko/architecture-lab2/server/plants"
 )
 
 type HttpPortNumber int
 
-type TabletApiServer struct {
+type PlantApiServer struct {
 	Port HttpPortNumber
 
-	PlantsHandler plant.HttpHandlerFunc
+	PlantsHandler plants.HttpHandlerFunc
 
 	server *http.Server
 }
