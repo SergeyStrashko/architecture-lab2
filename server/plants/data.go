@@ -48,7 +48,6 @@ func (s *Store) getData(plant *Plant) (*Response, error) {
 
 // Post request
 func (s *Store) setData(sdata *SendData) error {
-	// Check if tablet exists
 	var id int64
 	row := s.Db.QueryRow(`SELECT id FROM PlantsList WHERE id = $1`, sdata.Id)
 	err := row.Scan(&id)
@@ -60,11 +59,11 @@ func (s *Store) setData(sdata *SendData) error {
 		if err != nil {
 			return err
 		}
-		row = s.Db.QueryRow(`SELECT id FROM TabletsList WHERE id = $1`, sdata.Id)
+		row = s.Db.QueryRow(`SELECT id FROM PlantsList WHERE id = $1`, sdata.Id)
 	}
 	// Insert Data linked to table
 	_, err = s.Db.Exec(`
-  INSERT INTO TabletsState
+  INSERT INTO PlantsState
    ("moistureLevel", "serverTime", "plantid")
   VALUES
    ($1, CURRENT_TIMESTAMP, $3)`,

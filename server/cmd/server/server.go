@@ -38,7 +38,7 @@ func (s *PlantApiServer) Start() error {
 	return s.server.ListenAndServe()
 }
 
-func (s *PlantsApiServer) Stop() error {
+func (s *PlantApiServer) Stop() error {
 	if s.server == nil {
 		return fmt.Errorf("server was not started")
 	}
