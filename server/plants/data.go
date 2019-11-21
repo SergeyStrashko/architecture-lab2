@@ -22,9 +22,9 @@ func (s *Store) getData(plant *Plant) (*Response, error) {
 
 	rows, err := s.Db.Query(`
 		SELECT 
-			id, "moistureLevel", "serverTime" 
+			plantid, "moistureLevel", "serverTime" 
 		FROM plantsstate 
-			WHERE "moistureLevel" < 0.2 AND plantid = $1`, plant.Id)
+			WHERE "moistureLevel" < 0.2`)
 	if err != nil {
 		return nil, err
 	}
@@ -37,7 +37,7 @@ func (s *Store) getData(plant *Plant) (*Response, error) {
 			return nil, err
 		}
 		res = append(res, &state)
-		response.State = state
+		response.State = append(response.State, &state)
 	}
 	if res == nil {
 		res = make([]*State, 0)

@@ -13,15 +13,15 @@ type Plant struct {
 type State struct {
 	Id            int64   `json:"id"`
 	MoistureLevel float64 `json:"moistureLevel"`
-	ServerTime    string  `json:"serverTime"`
+	ServerTime    string  `json:"soilDataTimestamp"`
 }
 
 type SendData struct {
 	Id            int64   `json:"id"`
 	MoistureLevel float64 `json:"moistureLevel"`
-	ServerTime    string  `json:"serverTime"`
+	ServerTime    string  `json:"soilDataTimestamp"`
 }
 
 type Response struct {
-	State State `json:",State"`
+	State []*State `json:"res"`
 }
