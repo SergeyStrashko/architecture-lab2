@@ -3,6 +3,8 @@ package db
 import (
 	"database/sql"
 	"net/url"
+
+	_ "github.com/lib/pq"
 )
 
 type Connection struct {

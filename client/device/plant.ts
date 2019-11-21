@@ -8,7 +8,7 @@ export default class Plant extends Device {
   public getData() {
     return requests.getData(this.URL, this.id);
   }
-  public sendData = (moistureLevel: number, serverTime: Date) => {
+  public sendData(moistureLevel: number, serverTime: Date) {
     return requests.sendData(this.URL, this.id, moistureLevel, serverTime);
   }
 }

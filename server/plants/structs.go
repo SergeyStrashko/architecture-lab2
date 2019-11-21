@@ -11,17 +11,17 @@ type Plant struct {
 }
 
 type State struct {
-	Id            int64  `json:"id"`
-	MoistureLevel string `json:"moistureLevel"`
-	ServerTime    string `json:"serverTime"`
+	Id            int64   `json:"id"`
+	MoistureLevel float64 `json:"moistureLevel"`
+	ServerTime    string  `json:"serverTime"`
 }
 
 type SendData struct {
-	Id            int64  `json:"id"`
-	MoistureLevel string `json:"moistureLevel"`
-	ServerTime    string `json:"serverTime"`
+	Id            int64   `json:"id"`
+	MoistureLevel float64 `json:"moistureLevel"`
+	ServerTime    string  `json:"serverTime"`
 }
 
 type Response struct {
-	State State `json:"state`
+	State State `json:",State"`
 }

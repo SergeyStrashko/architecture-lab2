@@ -6,10 +6,11 @@
   "scripts": {
     "start": "tsc && node build/example.js"
   },
-  "author": "SS",
+  "author": "SergeyStrashko",
   "license": "MIT",
   "dependencies": {
-    "@types/node-fetch": "^2.5.2",
+    "@types/node-fetch": "^2.5.3",
+    "core-util-is": "^1.0.2",
     "node-fetch": "^2.6.0"
   }
 }

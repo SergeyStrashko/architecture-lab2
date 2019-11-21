@@ -11,7 +11,7 @@ export default {
   getData: (URL: string, id: number) => (
     fetch(`${URL}/getData`, {
       method: 'POST',
-      body: JSON.stringify({name}),
+      body: JSON.stringify({id}),
       headers: { 'Content-Type': 'application/json' }
     }).then((res: any) => res.json())
   )
